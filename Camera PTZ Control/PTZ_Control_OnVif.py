@@ -4,7 +4,7 @@ import threading
 from sensecam_control import onvif_control
 
 
-ip = '192.168.0.105'
+ip = '192.168.0.104'
 login = 'admin'
 password = '043113'
 
@@ -37,6 +37,18 @@ def event_keyboard(k):
     elif k == ord('h') or k == ord('H'):
         X.go_home_position()
 
+    #Set home position
+    elif k == ord('m') or k == ord('M'):
+        X.set_home_position()
+        
+    #Get PTZ Value
+    elif k == ord('n') or k == ord('N'):
+        print(X.get_ptz())  
+
+    #Stop Move
+    elif k == ord('v') or k == ord('V'):
+        X.stop_move()    
+
     #top left
     elif k == ord('i') or k == ord('I'):
         X.absolute_move(0.5, 0.25, 0)
@@ -57,7 +69,19 @@ def event_keyboard(k):
 def capture(ip_camera):
     global exit_program
 
-    ip2 = 'rtsp://admin:043113@192.168.0.105:554/live/profile.0'
+    ip2 = 'rtsp://admin:043113@192.168.0.104:554/live/profile.0'
+    print("W - Top")
+    print("A - Left")
+    print("S - Down")
+    print("D - Right")
+    print("H - Home Position")
+    print("M - Set Home Position")
+    print("N - Get PTZ Value")
+    print("V - Stop Move")
+    print("I - Top Left")
+    print("O - Top Right")
+    print("K - Bottom Left")
+    print("L - Bottom Right")
 
     cap = cv2.VideoCapture(ip2)
 
