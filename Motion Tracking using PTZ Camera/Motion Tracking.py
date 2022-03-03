@@ -119,7 +119,6 @@ def capture(ip_camera):
             if y_value > 1010:
                 X.relative_move(0, -0.25, 0)
             print(x_value, y_value)
-        # cv2.drawContours(frame1, contours, -1, (0, 255, 0), 2)
 
 
 
