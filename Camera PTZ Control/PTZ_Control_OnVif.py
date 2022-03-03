@@ -4,7 +4,7 @@ import threading
 from sensecam_control import onvif_control
 
 
-ip = '192.168.0.104'
+ip = '192.168.0.100'
 login = 'admin'
 password = '043113'
 
@@ -69,7 +69,7 @@ def event_keyboard(k):
 def capture(ip_camera):
     global exit_program
 
-    ip2 = 'rtsp://admin:043113@192.168.0.104:554/live/profile.0'
+    ip2 = 'rtsp://admin:043113@192.168.0.100:554/live/profile.0'
     print("W - Top")
     print("A - Left")
     print("S - Down")
